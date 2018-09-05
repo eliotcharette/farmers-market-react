@@ -9,11 +9,16 @@ function Produce(props) {
           background-color: lightblue;
           color: blue;
         }
+        .produce:hover {
+          background-color: teal;
+          color: red;
+        }
       `}
       </style>
       <div className="produce">
         <h3>{props.month}</h3>
-        <li>{props.selection}</li>
+        <ul>{props.selection.map((produce, index) =>
+        <li key={index}>{produce}</li>)}</ul>
       </div>
     </div>
   );
