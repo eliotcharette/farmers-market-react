@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Ticket(props){
+function Schedule(props){
   return (
     <div>
       <style jsx>{`
@@ -14,18 +14,19 @@ function Ticket(props){
           color: red;
         }
         `}</style>
-      <div className="color-toggle"><h3>{props.location} - {props.names}</h3>
-        <p><em>{props.issue}</em></p>
+      <div className="color-toggle"><h3>{props.day} - {props.location}</h3>
+        <p><em>{props.hours}</em> , Booth: {props.booth} </p>
         <hr/>
       </div>
     </div>
   );
 }
 
-Ticket.propTypes = {
-  names: PropTypes.string.isRequired,
+Schedule.propTypes = {
+  day: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  issue: PropTypes.string
+  hours: PropTypes.string.isRequired,
+  booth: PropTypes.string
 };
 
-export default Ticket;
+export default Schedule;
